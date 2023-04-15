@@ -1,5 +1,6 @@
 import './App.css';
 import './SideButtons.css';
+import './UserInfo.css';
 import { Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 
@@ -9,9 +10,10 @@ import TestPage2 from './pages/TestPage2.jsx';
 import SideBar from './pages/SideBar.jsx';
 import Test from './pages/Test';
 
-import LandingScreen from './pages/LandingScreen';
-
+import LandingScreen from './pages/LandingScreen.jsx';
+import UserInfo from './pages/UserInfo.jsx'
 import { AuthContextProvider } from './Firebase/Context';
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
           <Route path="/2" element={ <TestPage2/>} />
           <Route path="/3" element={ <LandingScreen/>} />
           <Route path="/5" element={ <SideBar/> } />
+          <Route path='/4' element={ <UserInfo/>} />
         </Routes>
       </div>
     </AuthContextProvider>
