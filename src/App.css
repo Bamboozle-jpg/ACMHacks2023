@@ -19,6 +19,13 @@
     background-color: rgb(35, 44, 49);
 }
 
+.closeButtonWrapper {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  margin-top: -20px;
+}
+
 .sidePanel {
   display: flex;
   width: 40%;
@@ -29,7 +36,7 @@
   padding-top: 5px;
   padding-right: 0px;
   align-items: flex-start;
-  justify-content: right;
+  flex-direction: column;
 }
 
 .main {
