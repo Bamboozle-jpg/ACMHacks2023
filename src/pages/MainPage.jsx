@@ -14,6 +14,7 @@ function MainPage() {
 
       <button onClick={ () => nav( "1" ) }>Page 1</button>
       <button onClick={ () => nav( "2" ) }>Page 2</button>
+      <button onClick={ () => nav( "/4" ) }>Test</button>
     </div>
   )
 }
