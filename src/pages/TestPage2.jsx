@@ -6,7 +6,10 @@ function TestPage2() {
 
   return (
     <div>
-        <h1>TESTPAGE2</h1>
+        <h1>
+          TESTPAGE2
+          {/* BEGIN YOUR TESTPAGE2 EDITING HERE */}
+        </h1>
 
         <button onClick={ () => nav( "/1" ) }>Page 1</button>
         <button onClick={ () => nav( "/" ) }>MainPage</button>
