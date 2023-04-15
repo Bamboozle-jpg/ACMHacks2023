@@ -5,7 +5,7 @@
 ## TO BEGIN:
 - Edit `MainPage.jsx` at `src/pages/MainPage.jsx`
 - Edit both other JSX files at the `pages` directory
-- The way to edit React JSX (JavaScript Extended) files is to simply write HTML
+- The way to edit React JSX (JavaScript Extended) files is to simply write HTML in the `return( <HTML goes here> )` statement of the function
 
 ## Notes about ReactJS
 - The way React works is that each file exports HTML
