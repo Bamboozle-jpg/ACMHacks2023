@@ -1,0 +1,83 @@
+.chatMessagesAndSenderWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgb(217, 255, 0);
+    width: 100%;
+}
+
+.chatMessages {
+    height: 50%;
+    border: 5px solid rgb(255, 196, 0);
+    width: 100%;
+    height: 75vh;
+}
+
+.chatSender {
+    border: 5px solid lime;
+    height: 50%;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.chatHead {
+    border: 5px solid rgb(255, 0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+.chatMainPage {
+    border: 5px solid rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    color: white;
+}
+
+.chatHeadContainer {
+    border: 5px solid rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15vh;   
+}
+
+.chatSendMessage {
+    height: 70%;
+    width: 100px;
+    border-radius: 50px;
+    background-color: #555f82; 
+    box-sizing:content-box;
+    box-shadow: 5px 5px 5px rgb(34, 21, 30);
+    display: inline-block;
+    border-style: none;
+    outline-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatSendMessage:hover {
+    background-color: #7c85a6;
+}
+.chatSendMessage:active {
+    background-color: #353d5b;
+    box-shadow: 1px 1px 1px rgb(34, 21, 30);
+}
+
+.chatTextInput {
+    width: 83%;
+    height: 60%;
+    padding-left: 20px;
+    font-size: 35px;
+    color: rgb(154, 172, 182); 
+    background:rgb(35, 44, 49);
+    border-radius: 25px;
+}
