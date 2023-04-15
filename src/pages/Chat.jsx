@@ -18,6 +18,9 @@ function Chat() {
         setHide(true)
     }
 
+    const currentPerson = [true, false, true, true, false, false, true, true, false, false, true, true]
+    const messageContent = ["Hey!", "Hello!", "Nice to meet you!", "Nice to meet you too! How are you doing today?", "I'm doing pretty good, and now I will type a very long message to prove a point about this app", "lol", "haha"]
+
     return (
         <div>
             <div class="outerWrapper sidePanelOpen">
@@ -43,7 +46,62 @@ function Chat() {
                     <div class="chatMessagesAndSenderWrapper">
 
                         <div class="chatMessages">
-                            Yo
+                            { currentPerson[0] ? 
+                                <div class="chatFromOther">
+                                    {messageContent[0]}
+                                </div> :
+                                <div class="chatFromSender">
+                                    {messageContent[0]}
+                                </div>
+                            }
+                            { currentPerson[1] ? 
+                                <div class="chatFromOther">
+                                    {messageContent[1]}
+                                </div> :
+                                <div class="chatFromSender">
+                                    {messageContent[1]}
+                                </div>
+                            }
+                            { currentPerson[2] ? 
+                                <div class="chatFromOther">
+                                    {messageContent[2]}
+                                </div> :
+                                <div class="chatFromSender">
+                                    {messageContent[2]}
+                                </div>
+                            }
+                            { currentPerson[3] ? 
+                                <div class="chatFromOther">
+                                    {messageContent[3]}
+                                </div> :
+                                <div class="chatFromSender">
+                                    {messageContent[3]}
+                                </div>
+                            }
+                            { currentPerson[4] ? 
+                                <div class="chatFromOther">
+                                    {messageContent[4]}
+                                </div> :
+                                <div class="chatFromSender">
+                                    {messageContent[4]}
+                                </div>
+                            }
+                            { currentPerson[5] ? 
+                                <div class="chatFromOther">
+                                    {messageContent[5]}
+                                </div> :
+                                <div class="chatFromSender">
+                                    {messageContent[5]}
+                                </div>
+                            }
+                            { currentPerson[6] ? 
+                                <div class="chatFromOther">
+                                    {messageContent[6]}
+                                </div> :
+                                <div class="chatFromSender">
+                                    {messageContent[6]}
+                                </div>
+                            }
                         </div>
                         <div class="chatSender">
                             <input class="chatTextInput" type="text" placeholder="Send a message :"></input>

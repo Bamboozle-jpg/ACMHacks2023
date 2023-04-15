@@ -81,3 +81,11 @@
     background:rgb(35, 44, 49);
     border-radius: 25px;
 }
+
+.chatFromOther {
+    justify-self: left;
+}
+
+.chatFromSender {
+    justify-self: right;
+}
