@@ -6,11 +6,14 @@ import { useNavigate } from 'react-router-dom'
 
 import { useState } from 'react'
 
+import './SideBar.css';
 
 
 function SideBar() {
+    // eslint-disable-next-line
     const nav = useNavigate();
-
+    
+    // eslint-disable-next-line
     const [testVar, setTestVar] = useState();
 
     const [hide, setHide] = useState( false );
@@ -29,12 +32,12 @@ function SideBar() {
                 { hide === true ? null : 
                     <div class="sidePanel"> 
                         This stuff will be in a side panel 
-                        <img class="closeButton" src={closeImg} onClick={ hideSidebar }/>
+                        <img class="closeButton" src={closeImg} onClick={ hideSidebar } alt='close button' />
                     </div>
                 }
                 {hide === true ? 
                     <button class="sidePanelToggle" type="button" onClick={ showSidebar }>
-                        <img class="openButton" src={menuImg} />
+                        <img class="openButton" src={menuImg} alt='open button'/>
                     </button> 
                 : null }
                 <div class="mainPageBody">

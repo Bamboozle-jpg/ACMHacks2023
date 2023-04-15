@@ -3,13 +3,6 @@ import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom'
 
-import { getAuth } from "firebase/auth";
-import { signOut } from 'firebase/auth';
-import { getRedirectResult } from 'firebase/auth';
-import { GoogleAuthProvider } from "firebase/auth";
-import { signInWithRedirect } from 'firebase/auth';
-
-
 import { UserAuth } from '../Firebase/Context';
 
 function MainPage() {
@@ -19,6 +12,8 @@ function MainPage() {
   const { SignOut } = UserAuth();
   const { User } = UserAuth();
 
+  
+  // eslint-disable-next-line
   const [ Name, SetName ] = useState( "None" );
 
 
@@ -60,6 +55,7 @@ function MainPage() {
       <button onClick={ () => nav( "2" ) }>Page 2</button>
       <button onClick={ HandleSignIn }>Log in</button>
       <button onClick={ HandleSignOut }>Log out</button>
+      <button onClick={ () => nav( "/chatroom" ) }>Chatroom</button>
     </div>
   )
 }

@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={ <MainPage/>} />
           <Route path="/1" element={ <TestPage1/>} />
           <Route path="/2" element={ <TestPage2/>} />
-          <Route path="/5" element={ <SideBar/> } />
+          <Route path="/chatroom" element={ <SideBar/> } />
         </Routes>
       </div>
     </AuthContextProvider>

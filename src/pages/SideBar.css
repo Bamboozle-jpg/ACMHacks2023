@@ -1,0 +1,71 @@
+.outerWrapper {
+    height: 100vh;
+    display: flex;
+    background-color: rgb(35, 44, 49);
+}
+
+
+.sidePanel {
+    display: flex;
+    width: 40%;
+    flex-shrink: 0;
+    padding: 20px;
+    color: #0000;
+    background-color: rgb(0, 103, 121);
+    padding-top: 5px;
+    padding-right: 0px;
+    align-items: flex-start;
+    justify-content: right;
+}
+
+
+.sidePanelToggle:hover {
+    /* background-color: rgb(0, 103, 121); */
+    animation-duration: 400ms;
+    animation-name: sidePanelHover;
+    animation-fill-mode: forwards;
+}
+    
+
+@keyframes sidePanelHover {
+    from {background-color: rgb(35, 44, 49);}
+    to {background-color: rgb(0, 103, 121);}
+}
+
+
+@keyframes closeHover {
+    from {background-color: rgb(0, 103, 121);}
+    to {background-color: rgb(35, 44, 49);}
+}
+
+
+.openButton {
+    filter: invert(18%) sepia(37%) saturate(4087%) hue-rotate(183deg) brightness(90%) contrast(102%);
+}
+
+
+.closeButton {
+    border-radius: 10px 0 0 10px;
+    margin-right: 0px;
+
+}
+
+
+.closeButton:hover {
+    animation-duration: 400ms;
+    animation-name: closeHover;
+    animation-fill-mode: forwards;
+}
+
+
+.sidePanelToggle {
+    width: 60px;
+    height: 50px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    color: rgb(0, 69, 112);
+    background-color: rgb(35, 44, 49);
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+}
