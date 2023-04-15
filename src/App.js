@@ -1,21 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 
-import { Router } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 
-import TestPage1 from './pages/TestPage1.jsx';
+import MainPage from './pages/MainPage.jsx';
+import TestPage1 from './pages/TestPage1';
 import TestPage2 from './pages/TestPage2.jsx';
 
-import Test from './pages/Test';
-
-import MainPage from './pages/MainPage.jsx';
 import { AuthContextProvider } from './Firebase/Context';
-
-import { UserAuth } from './Firebase/Context';
-
-import { auth } from './Firebase/Firebase';
 
 function App() {
   return (
