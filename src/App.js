@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import './NameSearch.css'
 
 import { Router } from 'react-router-dom';
 import { Routes } from 'react-router-dom';

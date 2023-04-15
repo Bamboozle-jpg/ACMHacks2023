@@ -1,0 +1,43 @@
+.eventbutton {
+    height:60px; 
+    width:150px; 
+    margin: -20px -60px; 
+    position:relative;
+    top:50%; 
+    left:50%;
+    background-color:  rgb(2, 179, 212); /* Green */
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.eventbutton:hover {
+    /* background-color: rgb(0, 103, 121); */
+    animation-duration: 200ms;
+    animation-name: eventbuttonHover;
+    animation-fill-mode: forwards;
+}
+
+@keyframes eventbuttonHover {
+    from {background-color: rgb(2, 179, 212);}
+    to {background-color: rgb(2, 123, 144);}
+}
+
+#generatebar {
+    text-align: center;
+    color: rgb(167, 210, 217);
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    font-size: 20px;
+    width: 320px;
+    border: 3px dashed rgb(0, 69, 112);
+    margin: 0 auto;
+    margin-top: 100px;
+}
