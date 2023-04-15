@@ -76,3 +76,17 @@
     margin: 0 auto;
     margin-top: 100px;
 }
+
+#timer {
+    text-align: center;
+    color: rgb(167, 210, 217);
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    font-size: 20px;
+    width: 320px;
+    border: 3px solid rgb(1, 36, 185);
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
