@@ -1,39 +1,39 @@
 #test {
-color: rgb(167, 210, 217);
+    color: rgb(167, 210, 217);
 
-color: rgb(2, 179, 212);
-color: rgb(0, 103, 121);
+    color: rgb(2, 179, 212);
+    color: rgb(0, 103, 121);
 
-color: rgb(0, 122, 199);
-color: rgb(0, 69, 112);
+    color: rgb(0, 122, 199);
+    color: rgb(0, 69, 112);
 
-color: rgb(1, 36, 185);
-color: rgb(1, 36, 85);
+    color: rgb(1, 36, 185);
+    color: rgb(1, 36, 85);
 
-background: rgb(35, 44, 49);
+    background: rgb(35, 44, 49);
 }
 
 .outerWrapper {
-height: 100vh;
-display: flex;
-background-color: rgb(35, 44, 49);
+    height: 100vh;
+    display: flex;
+    background-color: rgb(35, 44, 49);
 }
 
 .main {
-flex-grow: 1;
-padding: 20px;
+    flex-grow: 1;
+    padding: 20px;
 }
 
 .sidePanelToggle {
-width: 60px;
-height: 50px;
-flex-shrink: 0;
-display: grid;
-place-items: center;
-color: rgb(0, 69, 112);
-background-color: rgb(35, 44, 49);
-border: none;
-border-radius: 0px 10px 10px 0px;
+    width: 60px;
+    height: 50px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    color: rgb(0, 69, 112);
+    background-color: rgb(35, 44, 49);
+    border: none;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .openButton {
