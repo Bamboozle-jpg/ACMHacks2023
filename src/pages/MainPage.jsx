@@ -75,7 +75,7 @@ function MainPage() {
   return (
     <div>
       <h1>
-        MainPage
+        MainPage Yay!!
         {/* BEGIN YOUR MAINPAGE EDITING HERE */}
       </h1>
 

@@ -8,6 +8,8 @@ import { Route } from 'react-router-dom';
 import TestPage1 from './pages/TestPage1.jsx';
 import TestPage2 from './pages/TestPage2.jsx';
 
+import Test from './pages/Test';
+
 import MainPage from './pages/MainPage.jsx';
 import { AuthContextProvider } from './Firebase/Context';
 
