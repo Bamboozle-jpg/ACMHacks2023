@@ -173,11 +173,6 @@
     font-size: 16px;
 }
 
-#outerWrapper2 {
-    height: 100vh;
-    display: flex;
-    background-color: rgb(35, 44, 49);
-}
 
 .sidePanelMover {
     padding-top: 25px;
@@ -191,4 +186,9 @@
     align-items: center;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.outerWrapper2 {
+    /* border: red 5px solid; */
+    width: 100%;
 }
