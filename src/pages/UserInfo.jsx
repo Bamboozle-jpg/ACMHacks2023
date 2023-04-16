@@ -56,6 +56,10 @@ function UserInfo() {
                     <h1 id='title'>User Info</h1>
                     <form>
                         <div class="horizBox">
+                            <div id="title">Name : </div>
+                            <input type="text" id="userInput" placeholder='Enter what you would prefer to be called:'></input>
+                        </div>
+                        <div class="horizBox">
                             <div id="title">Contact Info : </div>
                             <input type="text" id="userInput" placeholder='Enter your contact info:'></input>
                         </div>
