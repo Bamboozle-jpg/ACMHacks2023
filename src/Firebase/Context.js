@@ -39,6 +39,8 @@ export const AuthContextProvider = ( { children } ) => {
             console.log( user.uid );
 
             localStorage.setItem( "UserID", user.uid );
+            localStorage.setItem( "UserName", user.displayName );
+            localStorage.setItem( "UserEmail", user.email );
 
             // ...
         }).catch((error) => {
