@@ -11,6 +11,7 @@ import { auth } from '../Firebase/Firebase'
 import { limit } from 'firebase/firestore'
 import { query } from 'firebase/firestore'
 import { addDoc } from 'firebase/firestore'
+
 import { orderBy } from 'firebase/firestore'
 import { collection } from 'firebase/firestore'
 import { onSnapshot } from 'firebase/firestore'
@@ -65,6 +66,7 @@ function SideBar() {
             createdAt: serverTimestamp(),
             uid,
         });
+
         SetMessage("");
         setState("");
     };
