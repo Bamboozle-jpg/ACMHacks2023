@@ -29,6 +29,7 @@
 .sidePanel {
   display: flex;
   width: 40%;
+  height: 100vh;
   flex-shrink: 0;
   padding: 20px;
   color: #0000;
