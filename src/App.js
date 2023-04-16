@@ -18,6 +18,7 @@ import Test from './pages/Test';
 import LandingScreen from './pages/LandingScreen.jsx';
 import UserInfo from './pages/UserInfo.jsx'
 import { AuthContextProvider } from './Firebase/Context';
+import ProtectedRoute from './pieces/ProtectedRoute';
 import ChatBar from './pages/ChatBar.jsx';
 
 function App() {
@@ -28,6 +29,16 @@ function App() {
           <Route path="/" element={ <MainPage/>} />
           <Route path="/1" element={ <TestPage1/>} />
           <Route path="/2" element={ <TestPage2/>} />
+          <Route
+            path="/chatroom"
+            element={ 
+            
+            // <ProtectedRoute>
+              <SideBar/>
+            // </ProtectedRoute>
+          
+            }
+          />
           <Route path="/3" element={ <LandingScreen/>} />
           <Route path="/4" element={ <SideBar/> } />
           <Route path="/5" element={ <SideBar/> } />
