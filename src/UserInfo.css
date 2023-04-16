@@ -1,0 +1,9 @@
+#userInput {
+    width: 80%;
+    font-size: 35px;
+    padding-left: 20px;
+    height: 65px;
+    color: rgb(57, 56, 90); 
+    background:rgb(243, 243, 255);
+    border-radius: 25px;
+}

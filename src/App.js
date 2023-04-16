@@ -1,4 +1,8 @@
 import './App.css';
+import './pages/chat.css';
+import './SideButtons.css';
+import './UserInfo.css';
+import './ChatBar.css';
 
 import { Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
@@ -7,9 +11,15 @@ import MainPage from './pages/MainPage.jsx';
 import TestPage1 from './pages/TestPage1';
 import TestPage2 from './pages/TestPage2.jsx';
 import SideBar from './pages/SideBar.jsx';
+import LandingScreen from './pages/LandingScreen';
+import Chat from './pages/Chat.jsx';
+import Test from './pages/Test';
 
+import LandingScreen from './pages/LandingScreen.jsx';
+import UserInfo from './pages/UserInfo.jsx'
 import { AuthContextProvider } from './Firebase/Context';
 import ProtectedRoute from './pieces/ProtectedRoute';
+import ChatBar from './pages/ChatBar.jsx';
 
 function App() {
   return (
@@ -19,7 +29,6 @@ function App() {
           <Route path="/" element={ <MainPage/>} />
           <Route path="/1" element={ <TestPage1/>} />
           <Route path="/2" element={ <TestPage2/>} />
-          
           <Route
             path="/chatroom"
             element={ 
@@ -30,7 +39,12 @@ function App() {
           
             }
           />
-
+          <Route path="/3" element={ <LandingScreen/>} />
+          <Route path="/4" element={ <SideBar/> } />
+          <Route path="/5" element={ <SideBar/> } />
+          <Route path="/6" element={ <Chat/> } />
+          <Route path='/7' element={ <UserInfo/>} />
+          <Route path='/8' element={ <ChatBar/>} />
         </Routes>
       </div>
     </AuthContextProvider>
