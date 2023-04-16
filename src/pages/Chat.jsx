@@ -55,7 +55,7 @@ function Chat() {
             createdAt: serverTimestamp(),
             uid,
         });
-        
+
         SetMessage( "" );
         setState("");
 
