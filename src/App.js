@@ -31,7 +31,7 @@ function App() {
           <Route path="/1" element={ <TestPage1/>} />
           <Route path="/2" element={ <TestPage2/>} />
           <Route path="/3" element={ <LandingScreen/>} />
-          <Route path="/4" element={ <Chat/> } />
+          <Route path="/4" element={ <SideBar/> } />
           <Route path='/5' element={ <UserInfo/>} />
           <Route path='/6' element={ <ChatBar/>} />
           <Route path="/7" element={ <NameSearch/>} />
@@ -40,7 +40,7 @@ function App() {
             element={ 
             
             <ProtectedRoute>
-              <SideBar/>
+              <Chat/>
             </ProtectedRoute>
           
             }
