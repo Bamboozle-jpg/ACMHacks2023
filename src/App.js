@@ -47,36 +47,6 @@ return (
           />
         </Routes>
       </div>
-        <div>
-            <Routes>
-                <Route path="/" element={ <MainPage/>} />
-                <Route path="/1" element={ <TestPage1/>} />
-                <Route path="/2" element={ <TestPage2/>} />
-                <Route path="/3" element={ <LandingScreen/>} />
-                <Route path='/5' element={ <UserInfo/>} />
-                <Route path='/6' element={ <ChatBar/>} />
-                <Route path="/7" element={ <NameSearch/>} />
-                <Route
-                    path="/chatroom"
-                    element={ 
-                    
-                    <ProtectedRoute>
-                        <Chat/>
-                    </ProtectedRoute>
-                
-                    }
-                />
-                <Route
-                    path="/4"
-                    element={ 
-                    
-                        
-                        <SideBar/>
-                
-                    }
-                />
-            </Routes>
-        </div>
     </AuthContextProvider>
 );
 }
