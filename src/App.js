@@ -11,9 +11,7 @@ import MainPage from './pages/MainPage.jsx';
 import TestPage1 from './pages/TestPage1';
 import TestPage2 from './pages/TestPage2.jsx';
 import SideBar from './pages/SideBar.jsx';
-import LandingScreen from './pages/LandingScreen';
 import Chat from './pages/Chat.jsx';
-import Test from './pages/Test';
 
 import LandingScreen from './pages/LandingScreen.jsx';
 import UserInfo from './pages/UserInfo.jsx'
@@ -29,6 +27,10 @@ function App() {
           <Route path="/" element={ <MainPage/>} />
           <Route path="/1" element={ <TestPage1/>} />
           <Route path="/2" element={ <TestPage2/>} />
+          <Route path="/3" element={ <LandingScreen/>} />
+          <Route path="/4" element={ <Chat/> } />
+          <Route path='/5' element={ <UserInfo/>} />
+          <Route path='/6' element={ <ChatBar/>} />
           <Route
             path="/chatroom"
             element={ 
@@ -39,12 +41,6 @@ function App() {
           
             }
           />
-          <Route path="/3" element={ <LandingScreen/>} />
-          <Route path="/4" element={ <SideBar/> } />
-          <Route path="/5" element={ <SideBar/> } />
-          <Route path="/6" element={ <Chat/> } />
-          <Route path='/7' element={ <UserInfo/>} />
-          <Route path='/8' element={ <ChatBar/>} />
         </Routes>
       </div>
     </AuthContextProvider>

@@ -29,8 +29,6 @@ import closeImg from "../assets/close_symbol.png"
 import qmark from "../assets/Qmark.png"
 import chat from '../assets/Chat.png'
 import info from '../assets/info.png'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
 
 let messages = [];
 
