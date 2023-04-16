@@ -61,7 +61,8 @@ function Chat() {
                             </button> 
                         : null }
                         <div class="chatHead">
-                            Time to do this thing
+                            <p class='chatName'>Johnathan Wick</p>
+
                         </div>
 
                     </div>
