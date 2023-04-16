@@ -221,10 +221,10 @@ function Chat() {
             </div>
             <div class="chatBar"> 
             { /*boolean ? div : div*/}
-                <button class ='selectedButton' onClick={ () => nav( "/1" ) }>
+                <button class ='selectedButton' onClick={ () => nav( "/7" ) }>
                     <div>RANDOM PEOPLE</div>
                 </button>
-                <button class ='chatButton' onClick={ () => nav( "/1" ) }>
+                <button class ='chatButton' onClick={ () => nav( "/7" ) }>
                     <div>NOT RANDOM PEOPLE</div>
                 </button>
 
