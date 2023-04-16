@@ -3,6 +3,9 @@ import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom'
 
+
+
+
 import { UserAuth } from '../Firebase/Context';
 
 function MainPage() {
@@ -37,25 +40,25 @@ function MainPage() {
 
   
   return (
-    <div>
-      <h1>
+    <div id='background'>
+      <h1 id='title'>
         MainPage
         {/* BEGIN YOUR MAINPAGE EDITING HERE */}
       </h1>
 
-      <h1>
+      <h1 id ='title'>
         Logged in as: { User?.displayName }
       </h1>
       <br></br>
-      <h1>
+      <h1 id ='title'>
         User email: { User?.email }
       </h1>
-
-      <button onClick={ () => nav( "1" ) }>Page 1</button>
-      <button onClick={ () => nav( "2" ) }>Page 2</button>
-      <button onClick={ HandleSignIn }>Log in</button>
-      <button onClick={ HandleSignOut }>Log out</button>
-      <button onClick={ () => nav( "/chatroom" ) }>Chatroom</button>
+      <div class='mainPageTurn'>
+        
+        <button onClick={ HandleSignIn }id='mainPageButton'>Log in</button>
+        <button onClick={ HandleSignOut }id='mainPageButton'>Log out</button>
+        <button onClick={ () => nav( "/chatroom" ) }id='mainPageButton'>Chatroom</button>
+      </div>
     </div>
   )
 }

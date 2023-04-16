@@ -1,18 +1,131 @@
 import React from 'react'
+import { useRef } from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+
 import menuImg from "../assets/menu_symbol.png"
 import closeImg from "../assets/close_symbol.png"
 import sendImg from "../assets/sendIcon.png"
-
-import { useNavigate } from 'react-router-dom'
-
-import { useState } from 'react'
 
 import qmark from "../assets/Qmark.png"
 import chat from '../assets/Chat.png'
 import info from '../assets/info.png'
 
+import { UserAuth } from '../Firebase/Context'
+
+
+import { db } from '../Firebase/Firebase'
+import { auth } from '../Firebase/Firebase'
+
+import { limit } from 'firebase/firestore'
+import { query } from 'firebase/firestore'
+import { addDoc } from 'firebase/firestore'
+import { orderBy } from 'firebase/firestore'
+import { collection } from 'firebase/firestore'
+import { onSnapshot } from 'firebase/firestore'
+import { serverTimestamp } from 'firebase/firestore'
+
+import './SideBar.css';
+
+
+
+let messages = [];
+
 function Chat() {
-    const [hide, setHide] = useState( false );
+    const [ Message, SetMessage ] = useState();
+
+    const Scrolling = useRef();
+
+    const SendMessage = async ( event ) => {
+        event.preventDefault();
+
+        if( Message.trim() === "" ) {
+            alert( "Blank message, cannot send" );
+            return
+        }
+
+        const { uid, displayName, photoURL } = auth.currentUser;
+        
+        await addDoc( collection( db, "messages" ), {
+            text: Message,
+            name: displayName,
+            avatar: photoURL,
+            createdAt: serverTimestamp(),
+            uid,
+        });
+        SetMessage( "" );
+
+        // document.getElementById( "#inputbox" ).innerHTML.value = "";
+
+        // $( '#mainform' )[ 0 ].reset();
+
+        return false;
+    };
+
+
+    useEffect( () => {
+        const q = query(
+          collection( db, "messages" ),  // these messages are on cloud firestore
+          orderBy( "createdAt" ),
+          limit( 100 )
+        );
+    
+        const unsubscribe = onSnapshot( q, ( QuerySnapshot ) => {
+            messages = [];
+            
+            var a = localStorage.getItem( "UserID" );
+            console.log( a );
+
+          QuerySnapshot.forEach( ( doc ) => {
+            // messages.push( { ...doc.data(), id: doc.id } );
+
+
+            if( a === doc.data().uid ) {
+                // messages.push( <li className="">{ doc.data().text }</li> );
+                messages.push(
+                    // <li className="">{ doc.data().text }</li>
+                    
+                    <li>
+                        <div className="chatMessageSender">
+                            <div className="chatFromSender">
+                                { doc.data().text }
+                            </div>
+                        </div>
+                    </li>
+                );
+            } else {
+                messages.push(
+                    // <li className="">{ doc.data().text }</li>
+
+                    <li>
+                        <div className="chatMessageOther">
+                            <div className="chatFromOther">
+                                { doc.data().text }
+                            </div>
+                        </div>
+                    </li>
+                );
+            }
+
+
+
+            console.log( "THIS IS THE DOC DATA" );
+
+            console.log( doc.data().text );
+          } );
+
+          SetMessage( messages );
+        });
+        return () => unsubscribe;
+      }, [] );
+
+
+
+
+
+    const [ hide, setHide ] = useState( false );
 
     function showSidebar() {
         setHide(false)
@@ -61,104 +174,31 @@ function Chat() {
                             </button> 
                         : null }
                         <div class="chatHead">
-                            Time to do this thing
+                            <p class='chatName'>Johnathan Wick</p>
+
                         </div>
 
                     </div>
                     <div class="chatMessagesAndSenderWrapper">
-                        
                         <div class="chatMessages">
-                            { otherPerson[0] ? 
-                                <div class="chatMessageOther">
-                                    <div class="chatFromOther">
-                                        {messageContent[0]}
-                                    </div>
-                                </div> :
-                                <div class="chatMessageSender">
-                                    <div class="chatFromSender">
-                                        {messageContent[0]}
-                                    </div>
-                                </div>
-                            }
-                            { otherPerson[1] ? 
-                                <div class="chatMessageOther">
-                                    <div class="chatFromOther">
-                                        {messageContent[1]}
-                                    </div>
-                                </div> :
-                                <div class="chatMessageSender">
-                                    <div class="chatFromSender">
-                                        {messageContent[1]}
-                                    </div>
-                                </div>
-                            }
-                            { otherPerson[2] ? 
-                                <div class="chatMessageOther">
-                                    <div class="chatFromOther">
-                                        {messageContent[2]}
-                                    </div>
-                                </div> :
-                                <div class="chatMessageSender">
-                                    <div class="chatFromSender">
-                                        {messageContent[2]}
-                                    </div>
-                                </div>
-                            }
-                            { otherPerson[3] ? 
-                                <div class="chatMessageOther">
-                                    <div class="chatFromOther">
-                                        {messageContent[3]}
-                                    </div>
-                                </div> :
-                                <div class="chatMessageSender">
-                                    <div class="chatFromSender">
-                                        {messageContent[3]}
-                                    </div>
-                                </div>
-                            }
-                            { otherPerson[4] ? 
-                                <div class="chatMessageOther">
-                                    <div class="chatFromOther">
-                                        {messageContent[4]}
-                                    </div>
-                                </div> :
-                                <div class="chatMessageSender">
-                                    <div class="chatFromSender">
-                                        {messageContent[4]}
-                                    </div>
-                                </div>
-                            }
-                            { otherPerson[5] ? 
-                                <div class="chatMessageOther">
-                                    <div class="chatFromOther">
-                                        {messageContent[5]}
-                                    </div>
-                                </div> :
-                                <div class="chatMessageSender">
-                                    <div class="chatFromSender">
-                                        {messageContent[5]}
-                                    </div>
-                                </div>
-                            }
-                            { otherPerson[6] ? 
-                                <div class="chatMessageOther">
-                                    <div class="chatFromOther">
-                                        {messageContent[6]}
-                                    </div>
-                                </div> :
-                                <div class="chatMessageSender">
-                                    <div class="chatFromSender">
-                                        {messageContent[6]}
-                                    </div>
-                                </div>
-                            }
+
+
+
+                            <ul>
+                                { messages }
+                            </ul>
+
+
+
                         </div>
-                        <div class="chatSender">
-                            <input class="chatTextInput" type="text" placeholder="Send a message :)"></input>
-                            <button class="chatSendMessage">
-                                <img class="chatSendImage" src={sendImg} width="75" height="75"/>
+
+                        <form id="mainform" onSubmit={ SendMessage } class="chatSender">
+                            <input id="inputbox" class="chatTextInput" type="text" placeholder="Send a message :)" onChange={ ( e ) => { SetMessage( e.target.value ); console.log( e.target.value ) } } ></input>
+
+                            <button type="submit" class="chatSendMessage">
+                                <img class="chatSendImage" src={ sendImg } width="75" height="75"/>
                             </button>
-                        </div>
+                        </form>
 
                     </div>
 
