@@ -57,7 +57,7 @@ function MainPage() {
         
         <button onClick={ HandleSignIn }id='mainPageButton'>Log in</button>
         <button onClick={ HandleSignOut }id='mainPageButton'>Log out</button>
-        <button onClick={ () => nav( "/chatroom" ) }id='mainPageButton'>Chatroom</button>
+        <button onClick={ () => nav( "/5" ) }id='mainPageButton'>Info</button>
       </div>
     </div>
   )
