@@ -1,19 +1,61 @@
 import React from 'react'
+import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom'
 
-function MainPage() {
-  const nav = useNavigate();
+import { UserAuth } from '../Firebase/Context';
 
-  return (
-    <div>
-      <h1>
-        MainPage Yay!!
+function MainPage() {
+    const nav = useNavigate();
+
+  const { GoogleLogIn } = UserAuth();
+  const { SignOut } = UserAuth();
+  const { User } = UserAuth();
+
+  
+  // eslint-disable-next-line
+  const [ Name, SetName ] = useState( "None" );
+
+
+  const HandleSignIn = async ( e ) => {
+    try {
+      await GoogleLogIn();
+      console.log( "Successful login" );
+    } catch( error ) {
+      console.log( error );
+      console.log( "error above" );
+    }
+  }
+
+  const HandleSignOut = async ( e ) => {
+    e.preventDefault();
+
+    await SignOut();
+
+    console.log( "Signed out" );
+  }
+
+  
+  return ( 
+    <div id='background'>
+      <h1 id='title'>
+        MainPage
         {/* BEGIN YOUR MAINPAGE EDITING HERE */}
       </h1>
 
-      <button onClick={ () => nav( "1" ) }>Page 1</button>
-      <button onClick={ () => nav( "2" ) }>Page 2</button>
+      <h1 id ='title'>
+        Logged in as: { User?.displayName }
+      </h1>
+      <br></br>
+      <h1 id ='title'>
+        User email: { User?.email }
+      </h1>
+      <div class='mainPageTurn'>
+        
+        <button onClick={ HandleSignIn }id='mainPageButton'>Log in</button>
+        <button onClick={ HandleSignOut }id='mainPageButton'>Log out</button>
+        <button onClick={ () => nav( "/chatroom" ) }id='mainPageButton'>Chatroom</button>
+      </div>
     </div>
   )
 }

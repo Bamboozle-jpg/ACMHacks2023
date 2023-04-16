@@ -13,6 +13,7 @@ function TestPage2() {
 
         <button onClick={ () => nav( "/1" ) }>Page 1</button>
         <button onClick={ () => nav( "/" ) }>MainPage</button>
+        <button onClick={ () => nav( "/4" ) }>Test</button>
     </div>
   )
 }
