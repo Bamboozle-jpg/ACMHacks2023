@@ -24,7 +24,6 @@
 }
 
 .chatHead {
-    border: 5px solid rgb(255, 0, 0);
     width: 100%;
     height: 100%;
 }
@@ -39,11 +38,12 @@
 }
 
 .chatHeadContainer {
-    border: 5px solid rgb(255, 255, 255);
+    /*border: 2px solid rgb(23, 21, 60); */
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 15vh;   
+    height: 15vh;
+    background-image: linear-gradient(to left, #1c1a21, rgb(35, 44, 49));   
 }
 
 .chatSendMessage {
@@ -114,4 +114,12 @@
 .chatMessageOther {
     display: flex;
     justify-content: left;
+}
+
+.chatName {
+    color:rgb(115, 158, 180);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    
 }

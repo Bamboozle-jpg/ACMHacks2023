@@ -39,7 +39,7 @@ function Chat() {
                             </button> 
                         : null }
                         <div class="chatHead">
-                            Hi
+                            <p class='chatName'>Johnathan Wick</p>
                         </div>
 
                     </div>
