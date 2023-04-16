@@ -9,6 +9,7 @@ import TestPage2 from './pages/TestPage2.jsx';
 import SideBar from './pages/SideBar.jsx';
 
 import { AuthContextProvider } from './Firebase/Context';
+import ProtectedRoute from './pieces/ProtectedRoute';
 
 function App() {
   return (
@@ -18,7 +19,18 @@ function App() {
           <Route path="/" element={ <MainPage/>} />
           <Route path="/1" element={ <TestPage1/>} />
           <Route path="/2" element={ <TestPage2/>} />
-          <Route path="/chatroom" element={ <SideBar/> } />
+          
+          <Route
+            path="/chatroom"
+            element={ 
+            
+            // <ProtectedRoute>
+              <SideBar/>
+            // </ProtectedRoute>
+          
+            }
+          />
+
         </Routes>
       </div>
     </AuthContextProvider>

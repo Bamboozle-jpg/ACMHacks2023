@@ -39,7 +39,7 @@ function MainPage() {
   return (
     <div>
       <h1>
-        MainPage Yay!!
+        MainPage
         {/* BEGIN YOUR MAINPAGE EDITING HERE */}
       </h1>
 
