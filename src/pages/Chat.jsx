@@ -18,7 +18,7 @@ function Chat() {
         setHide(true)
     }
 
-    const currentPerson = [true, false, true, true, false, false, true, true, false, false, true, true]
+    const otherPerson = [true, false, true, false, true, false, true, true, false, false, true, true]
     const messageContent = ["Hey!", "Hello!", "Nice to meet you!", "Nice to meet you too! How are you doing today?", "I'm doing pretty good, and now I will type a very long message to prove a point about this app", "lol", "haha"]
 
     return (
@@ -44,62 +44,90 @@ function Chat() {
 
                     </div>
                     <div class="chatMessagesAndSenderWrapper">
-
+                        
                         <div class="chatMessages">
-                            { currentPerson[0] ? 
-                                <div class="chatFromOther">
-                                    {messageContent[0]}
+                            { otherPerson[0] ? 
+                                <div class="chatMessageOther">
+                                    <div class="chatFromOther">
+                                        {messageContent[0]}
+                                    </div>
                                 </div> :
-                                <div class="chatFromSender">
-                                    {messageContent[0]}
+                                <div class="chatMessageSender">
+                                    <div class="chatFromSender">
+                                        {messageContent[0]}
+                                    </div>
                                 </div>
                             }
-                            { currentPerson[1] ? 
-                                <div class="chatFromOther">
-                                    {messageContent[1]}
+                            { otherPerson[1] ? 
+                                <div class="chatMessageOther">
+                                    <div class="chatFromOther">
+                                        {messageContent[1]}
+                                    </div>
                                 </div> :
-                                <div class="chatFromSender">
-                                    {messageContent[1]}
+                                <div class="chatMessageSender">
+                                    <div class="chatFromSender">
+                                        {messageContent[1]}
+                                    </div>
                                 </div>
                             }
-                            { currentPerson[2] ? 
-                                <div class="chatFromOther">
-                                    {messageContent[2]}
+                            { otherPerson[2] ? 
+                                <div class="chatMessageOther">
+                                    <div class="chatFromOther">
+                                        {messageContent[2]}
+                                    </div>
                                 </div> :
-                                <div class="chatFromSender">
-                                    {messageContent[2]}
+                                <div class="chatMessageSender">
+                                    <div class="chatFromSender">
+                                        {messageContent[2]}
+                                    </div>
                                 </div>
                             }
-                            { currentPerson[3] ? 
-                                <div class="chatFromOther">
-                                    {messageContent[3]}
+                            { otherPerson[3] ? 
+                                <div class="chatMessageOther">
+                                    <div class="chatFromOther">
+                                        {messageContent[3]}
+                                    </div>
                                 </div> :
-                                <div class="chatFromSender">
-                                    {messageContent[3]}
+                                <div class="chatMessageSender">
+                                    <div class="chatFromSender">
+                                        {messageContent[3]}
+                                    </div>
                                 </div>
                             }
-                            { currentPerson[4] ? 
-                                <div class="chatFromOther">
-                                    {messageContent[4]}
+                            { otherPerson[4] ? 
+                                <div class="chatMessageOther">
+                                    <div class="chatFromOther">
+                                        {messageContent[4]}
+                                    </div>
                                 </div> :
-                                <div class="chatFromSender">
-                                    {messageContent[4]}
+                                <div class="chatMessageSender">
+                                    <div class="chatFromSender">
+                                        {messageContent[4]}
+                                    </div>
                                 </div>
                             }
-                            { currentPerson[5] ? 
-                                <div class="chatFromOther">
-                                    {messageContent[5]}
+                            { otherPerson[5] ? 
+                                <div class="chatMessageOther">
+                                    <div class="chatFromOther">
+                                        {messageContent[5]}
+                                    </div>
                                 </div> :
-                                <div class="chatFromSender">
-                                    {messageContent[5]}
+                                <div class="chatMessageSender">
+                                    <div class="chatFromSender">
+                                        {messageContent[5]}
+                                    </div>
                                 </div>
                             }
-                            { currentPerson[6] ? 
-                                <div class="chatFromOther">
-                                    {messageContent[6]}
+                            { otherPerson[6] ? 
+                                <div class="chatMessageOther">
+                                    <div class="chatFromOther">
+                                        {messageContent[6]}
+                                    </div>
                                 </div> :
-                                <div class="chatFromSender">
-                                    {messageContent[6]}
+                                <div class="chatMessageSender">
+                                    <div class="chatFromSender">
+                                        {messageContent[6]}
+                                    </div>
                                 </div>
                             }
                         </div>
