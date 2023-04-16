@@ -3,6 +3,9 @@ import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom'
 
+
+
+
 import { UserAuth } from '../Firebase/Context';
 
 function MainPage() {
@@ -35,7 +38,7 @@ function MainPage() {
     console.log( "Signed out" );
   }
 
-  
+
   return (
     <div>
       <h1>
