@@ -129,7 +129,7 @@
   text-align: center;
   color: rgb(167, 210, 217);
   font-family: 'Roboto', sans-serif;
-  padding-top: 40px;
+  font-size: 40px;
 }
 
 #button {
@@ -187,4 +187,8 @@
 .horizBox {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

@@ -53,8 +53,14 @@ function UserInfo() {
                     : null }
                     <h1 id='title'>User Info</h1>
                     <form>
-                        <title></title>
-                        <input type="text" id="userInput" placeholder='Enter your contact info:'></input>
+                        <div class="horizBox">
+                            <div id="title">Contact Info : </div>
+                            <input type="text" id="userInput" placeholder='Enter your contact info:'></input>
+                        </div>
+                        <div class="horizBox">
+                            <div id="title">Phone Number : </div>
+                            <input type="text" id="userInput" placeholder='Enter your phone number:'></input>
+                        </div>
                     </form>
                 </div>
             </div>
