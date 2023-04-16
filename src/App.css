@@ -19,6 +19,27 @@
     background-color: rgb(35, 44, 49);
 }
 
+.closeButtonWrapper {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  margin-top: -20px;
+}
+
+.sidePanel {
+  display: flex;
+  width: 40%;
+  height: 100vh;
+  flex-shrink: 0;
+  padding: 20px;
+  color: #0000;
+  background-color: rgb(0, 103, 121);
+  padding-top: 5px;
+  padding-right: 0px;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
 .main {
     flex-grow: 1;
     padding: 20px;
@@ -35,6 +56,16 @@
     color: rgb(167, 210, 217);
     font-family: 'Roboto', sans-serif;
     padding-top: 40px;
+    
+.closeButton:hover {
+  animation-duration: 400ms;
+  animation-name: closeHover;
+  animation-fill-mode: forwards;
+}
+
+.closeButton {
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
 .sidePanelToggle {
@@ -49,13 +80,22 @@
     border-radius: 0px 10px 10px 0px;
 }
 
-.openButton {
-    filter: invert(18%) sepia(37%) saturate(4087%) hue-rotate(183deg) brightness(90%) contrast(102%);
-}
-.closeButton:hover {
-    animation-duration: 400ms;
-    animation-name: closeHover;
-    animation-fill-mode: forwards;
+.sidePanelToggle:hover {
+  /* background-color: rgb(0, 103, 121); */
+  animation-duration: 400ms;
+  animation-name: sidePanelHover;
+  animation-fill-mode: forwards;
+  }
+  
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .closeButton {
@@ -84,27 +124,47 @@
 animation-duration: 400ms;
 animation-name: sidePanelHover;
 animation-fill-mode: forwards;
+
+.App-link {
+  color: #61dafb;
 }
 
 @keyframes sidePanelHover {
-    from {background-color: rgb(35, 44, 49);}
-    to {background-color: rgb(0, 103, 121);}
+  from {background-color: rgb(35, 44, 49);}
+  to {background-color: rgb(0, 103, 121);}
 }
 
 @keyframes closeHover {
-    from {background-color: rgb(0, 103, 121);}
-    to {background-color: rgb(35, 44, 49);}
+  from {background-color: rgb(0, 103, 121);}
+  to {background-color: rgb(35, 44, 49);}
 }
 
-.sidePanel {
-    display: flex;
-    width: 40%;
-    flex-shrink: 0;
-    padding: 20px;
-    color: #0000;
-    background-color: rgb(0, 103, 121);
-    padding-top: 5px;
-    padding-right: 0px;
-    align-items: flex-start;
-    justify-content: right;
+#background {
+  background-image: linear-gradient( 135deg, rgb(0, 122, 199) 10%, rgb(1, 36, 85) 100%);
+  height: 100vh;
+  margin-top: -22px;
+}
+
+#title {
+  text-align: center;
+  color: rgb(167, 210, 217);
+  font-family: 'Roboto', sans-serif;
+  padding-top: 40px;
+}
+
+#button {
+  height:30px; 
+  width:100px; 
+  margin: -20px -50px; 
+  position:relative;
+  top:50%; 
+  left:50%;
+  background-color:  rgb(2, 179, 212); /* Green */
+  border: none;
+  color: white;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

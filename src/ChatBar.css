@@ -1,0 +1,71 @@
+.chatBar {
+    display: flex;
+    width: 30%;
+    height: 100vh;
+    flex-shrink: 0;
+    padding-top: 60px;
+    color: #0000;
+    background-color: rgb(1, 36, 85);;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .chatButton {
+    height:50px; 
+    width:100%; 
+    margin: 8px -28px; 
+    position:relative; 
+    left:6.5%;
+    background-color:  rgb(1, 36, 85);
+    border: none;
+    color: white;
+    padding: 1px 1px;
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;  
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid rgb(74, 71, 71);
+}
+
+.selectedButton {
+    height:50px; 
+    width:100%; 
+    margin: 8px -28px; 
+    position:relative; 
+    left:6.5%;
+    background-color:  rgb(38, 64, 100); 
+    border: none;
+    color: white;
+    padding: 1px 1px;
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;  
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid rgb(74, 71, 71);
+}
+
+
+.chatButton:hover {
+    /* background-color: rgb(0, 103, 121); */
+    animation-duration: 200ms;
+    animation-name: chatButtonHover;
+    animation-fill-mode: forwards;
+}
+
+@keyframes chatButtonHover {
+    from {background-color: rgb(1, 36, 85);}
+    to {background-color: rgb(2, 149, 175);}
+  }
