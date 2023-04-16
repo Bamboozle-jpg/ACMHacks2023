@@ -1,6 +1,8 @@
 import './App.css';
 import './SideButtons.css';
 import './UserInfo.css';
+import './ChatBar.css';
+
 import { Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 
@@ -13,7 +15,7 @@ import Test from './pages/Test';
 import LandingScreen from './pages/LandingScreen.jsx';
 import UserInfo from './pages/UserInfo.jsx'
 import { AuthContextProvider } from './Firebase/Context';
-
+import ChatBar from './pages/ChatBar.jsx';
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
           <Route path="/3" element={ <LandingScreen/>} />
           <Route path="/5" element={ <SideBar/> } />
           <Route path='/4' element={ <UserInfo/>} />
+          <Route path='/7' element={ <ChatBar/>} />
         </Routes>
       </div>
     </AuthContextProvider>
