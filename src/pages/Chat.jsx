@@ -7,6 +7,10 @@ import { useNavigate } from 'react-router-dom'
 
 import { useState } from 'react'
 
+import qmark from "../assets/Qmark.png"
+import chat from '../assets/Chat.png'
+import info from '../assets/info.png'
+
 function Chat() {
     const [hide, setHide] = useState( false );
 
@@ -18,16 +22,34 @@ function Chat() {
         setHide(true)
     }
 
+    const nav = useNavigate();
+
     const otherPerson = [true, false, true, false, true, false, true, true, false, false, true, true]
     const messageContent = ["Hey!", "Hello!", "Nice to meet you!", "Nice to meet you too! How are you doing today?", "I'm doing pretty good, and now I will type a very long message to prove a point about this app", "lol", "haha"]
 
     return (
-        <div>
+        <div class="chatWholeWrapper">
             <div class="outerWrapper sidePanelOpen">
-                { hide === true ? null : 
+            { hide === true ? null : 
                     <div class="sidePanel"> 
                         This stuff will be in a side panel 
-                        <img class="closeButton" src={closeImg} onClick={ hideSidebar }/>
+
+                        <div class="closeButtonWrapper">
+                            <img class="closeButton" src={closeImg} onClick={ hideSidebar }/>
+                        </div>
+                        <button class ='sideButton' onClick={ () => nav( "/1" ) }>
+                            <img src={qmark} width='23' height = '23' class='padding'/>
+                            <div>RANDOM PEOPLE</div>
+                        </button>
+                        <button class ='sideButton' onClick={ () => nav( "/1" ) }>
+                            <img src={chat} width='25' height = '25' class='padding'/>
+                            <div>CHATS</div>
+                        </button>
+                        <button class ='sideButton' onClick={ () => nav( "/1" ) }>
+                            <img src={info} width='25' height = '25' class='padding'/>
+                            <div>USER INFO</div>
+                        </button>
+
                     </div>
                 }
                 <div class="chatMainPage">
@@ -40,6 +62,7 @@ function Chat() {
                         : null }
                         <div class="chatHead">
                             <p class='chatName'>Johnathan Wick</p>
+
                         </div>
 
                     </div>
@@ -132,7 +155,7 @@ function Chat() {
                             }
                         </div>
                         <div class="chatSender">
-                            <input class="chatTextInput" type="text" placeholder="Send a message :"></input>
+                            <input class="chatTextInput" type="text" placeholder="Send a message :)"></input>
                             <button class="chatSendMessage">
                                 <img class="chatSendImage" src={sendImg} width="75" height="75"/>
                             </button>
@@ -141,6 +164,16 @@ function Chat() {
                     </div>
 
                 </div>
+            </div>
+            <div class="chatBar"> 
+            { /*boolean ? div : div*/}
+                <button class ='selectedButton' onClick={ () => nav( "/1" ) }>
+                    <div>RANDOM PEOPLE</div>
+                </button>
+                <button class ='chatButton' onClick={ () => nav( "/1" ) }>
+                    <div>NOT RANDOM PEOPLE</div>
+                </button>
+
             </div>
         </div>
     )

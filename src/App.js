@@ -35,9 +35,9 @@ function App() {
             path="/chatroom"
             element={ 
             
-            // <ProtectedRoute>
+            <ProtectedRoute>
               <SideBar/>
-            // </ProtectedRoute>
+            </ProtectedRoute>
           
             }
           />
