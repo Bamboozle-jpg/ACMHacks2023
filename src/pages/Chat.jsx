@@ -55,11 +55,17 @@ function Chat() {
             createdAt: serverTimestamp(),
             uid,
         });
+        
         SetMessage( "" );
 
         // document.getElementById( "#inputbox" ).innerHTML.value = "";
 
         // $( '#mainform' )[ 0 ].reset();
+
+        window.scrollTo( {
+            bottom: 0,
+            behavior: "smooth"
+        } );
 
         return false;
     };
