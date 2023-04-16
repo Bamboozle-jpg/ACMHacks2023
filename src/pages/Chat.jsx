@@ -57,6 +57,7 @@ function Chat() {
         });
         
         SetMessage( "" );
+        setState("");
 
         // document.getElementById( "#inputbox" ).innerHTML.value = "";
 
@@ -70,12 +71,20 @@ function Chat() {
         return false;
     };
 
+    const [state, setState] = useState("");
+
+    const onInput = (e) => setState(e.target.value);
+
+    const onSubmit = () => {
+        setState("");
+    };
+
 
     useEffect( () => {
         const q = query(
-          collection( db, "messages" ),  // these messages are on cloud firestore
-          orderBy( "createdAt" ),
-          limit( 100 )
+        collection( db, "messages" ),  // these messages are on cloud firestore
+        orderBy( "createdAt" ),
+        limit( 100 )
         );
     
         const unsubscribe = onSnapshot( q, ( QuerySnapshot ) => {
@@ -84,7 +93,7 @@ function Chat() {
             var a = localStorage.getItem( "UserID" );
             console.log( a );
 
-          QuerySnapshot.forEach( ( doc ) => {
+        QuerySnapshot.forEach( ( doc ) => {
             // messages.push( { ...doc.data(), id: doc.id } );
 
 
@@ -120,18 +129,14 @@ function Chat() {
             console.log( "THIS IS THE DOC DATA" );
 
             console.log( doc.data().text );
-          } );
+        } );
 
-          SetMessage( messages );
+        SetMessage( messages );
         });
         return () => unsubscribe;
-      }, [] );
+    }, [] );
 
-
-
-
-
-    const [ hide, setHide ] = useState( false );
+    const [ hide, setHide ] = useState( true );
 
     function showSidebar() {
         setHide(false)
@@ -199,7 +204,11 @@ function Chat() {
                         </div>
 
                         <form id="mainform" onSubmit={ SendMessage } class="chatSender">
-                            <input id="inputbox" class="chatTextInput" type="text" placeholder="Send a message :)" onChange={ ( e ) => { SetMessage( e.target.value ); console.log( e.target.value ) } } ></input>
+                            <input id="inputbox" class="chatTextInput" type="text" placeholder="Send a message :)" value={state} onChange={ ( e ) => { 
+                                SetMessage( e.target.value ); 
+                                console.log( e.target.value );
+                                setState( e.target.value );
+                            } } ></input>
 
                             <button type="submit" class="chatSendMessage">
                                 <img class="chatSendImage" src={ sendImg } width="75" height="75"/>
