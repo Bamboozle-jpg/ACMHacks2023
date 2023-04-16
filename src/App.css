@@ -79,3 +79,25 @@
 .openButton {
     user-select: none;
 }
+
+.mainPageTurn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#mainPageButton {
+    height:30px; 
+    width:100px; 
+    top:50%; 
+    margin: 20px;
+    background-color:  rgb(2, 179, 212); /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+}
