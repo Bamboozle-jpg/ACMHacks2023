@@ -154,22 +154,22 @@ function Chat() {
     return (
         <div class="chatWholeWrapper">
             <div class="outerWrapper sidePanelOpen">
-            { hide === true ? null : 
+                { hide === true ? null : 
                     <div class="sidePanel"> 
                         This stuff will be in a side panel 
 
                         <div class="closeButtonWrapper">
                             <img class="closeButton" src={closeImg} onClick={ hideSidebar }/>
                         </div>
-                        <button class ='sideButton' onClick={ () => nav( "/1" ) }>
+                        <button class ='sideButton' onClick={ () => nav( "/7" ) }>
                             <img src={qmark} width='23' height = '23' class='padding'/>
                             <div>RANDOM PEOPLE</div>
                         </button>
-                        <button class ='sideButton' onClick={ () => nav( "/1" ) }>
+                        <button class ='sideButton' onClick={ () => nav( "/chatroom" ) }>
                             <img src={chat} width='25' height = '25' class='padding'/>
                             <div>CHATS</div>
                         </button>
-                        <button class ='sideButton' onClick={ () => nav( "/1" ) }>
+                        <button class ='sideButton' onClick={ () => nav( "/5" ) }>
                             <img src={info} width='25' height = '25' class='padding'/>
                             <div>USER INFO</div>
                         </button>

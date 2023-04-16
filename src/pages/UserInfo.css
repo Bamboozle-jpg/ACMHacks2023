@@ -1,0 +1,14 @@
+.border {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    /* border: 5px solid lime; */
+    margin-top: 4rem;
+    color: white;
+}
+
+.border2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
