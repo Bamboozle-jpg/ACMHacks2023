@@ -36,7 +36,7 @@ function SideBar() {
     // eslint-disable-next-line
     const nav = useNavigate();
     
-    const [ Message, SetMessage ] = useState();
+    const [ Message, SetMessage ] = useState("");
 
     const [hide, setHide] = useState( false );
 
@@ -66,41 +66,46 @@ function SideBar() {
             createdAt: serverTimestamp(),
             uid,
         });
-        SetMessage( "" );
+        SetMessage("");
+        setState("");
     };
 
     const Scrolling = useRef();
 
+    const [state, setState] = useState("");
 
-    
+    const onInput = (e) => setState(e.target.value);
 
+    const onSubmit = () => {
+        setState("");
+    };
 
     useEffect(() => {
-        const q = query(
-          collection( db, "messages" ),  // these messages are on cloud firestore
-          orderBy( "createdAt" ),
-          limit( 100 )
+            const q = query(
+            collection( db, "messages" ),  // these messages are on cloud firestore
+            orderBy( "createdAt" ),
+            limit( 100 )
         );
     
         const unsubscribe = onSnapshot( q, ( QuerySnapshot ) => {
             messages = [];
 
-          QuerySnapshot.forEach( ( doc ) => {
-            // messages.push( { ...doc.data(), id: doc.id } );
-            messages.push( <li >{ doc.data().text }</li> );
-            console.log( "THIS IS THE DOC DATA" );
+                QuerySnapshot.forEach( ( doc ) => {
+                    // messages.push( { ...doc.data(), id: doc.id } );
+                    messages.push( <li >{ doc.data().text }</li> );
+                    console.log( "THIS IS THE DOC DATA" );
 
-            // const { UID, NAME, CREATEDAT, TEXT, AVATAR } = doc.data();
+                    // const { UID, NAME, CREATEDAT, TEXT, AVATAR } = doc.data();
 
-            // console.log( doc.data() )
+                    // console.log( doc.data() )
 
-            console.log( doc.data().text );
-          } );
+                    console.log( doc.data().text );
+                });
 
-          SetMessage( messages );
+            SetMessage( messages );
         });
         return () => unsubscribe;
-      }, []);
+    }, []);
 
 
 
@@ -187,14 +192,19 @@ function SideBar() {
 
 
 
-                    <div className='send_message_area'>
-                        <input id="input_box_id" type="text" className='input_box' onChange={ ( e ) => { SetMessage( e.target.value ); console.log( e.target.value ) } }></input>
+                    <form onSubmit={SendMessage} className='send_message_area'>
+                        <input id="input_box_id" type="text" className='input_box' value={state}
+                        onChange={ ( e ) => {
+                            SetMessage(e.target.value);
+                            console.log(e.target.value);
+                            setState(e.target.value) }
+                        }></input>
 
-                        <IconButton color='info' size='large' onClick={ SendMessage }>
+                        <IconButton type="submit" color='info' size='large'>
                             <SendIcon/>
                         </IconButton>
                         
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
