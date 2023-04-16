@@ -105,6 +105,10 @@ function NameSearch() {
                 currentDocumentScore += 1;
             }
 
+            if (docCollection[i].email === userDocument.email) {
+                currentDocumentScore = 0;
+            }
+
             if (currentDocumentScore > bestDocumentScore) {
                 bestDocumentID = i;
                 bestDocumentScore = currentDocumentScore;
