@@ -13,8 +13,10 @@ import qmark from "../assets/Qmark.png"
 import chat from '../assets/Chat.png'
 import info from '../assets/info.png'
 
-import { UserAuth } from '../Firebase/Context'
+import { doc } from 'firebase/firestore'
+import { setDoc } from 'firebase/firestore'
 
+import { UserAuth } from '../Firebase/Context'
 
 import { db } from '../Firebase/Firebase'
 import { auth } from '../Firebase/Firebase'
@@ -46,9 +48,9 @@ function Chat() {
             return
         }
 
-        const { uid, displayName, photoURL } = auth.currentUser;
+        const { uid, email, displayName, photoURL } = auth.currentUser;
         
-        await addDoc( collection( db, "messages" ), {
+        await setDoc( doc( db, "messages", email ), {
             text: Message,
             name: displayName,
             avatar: photoURL,
@@ -68,7 +70,7 @@ function Chat() {
             behavior: "smooth"
         } );
 
-        return false;
+        // return false;
     };
 
     const [state, setState] = useState("");
@@ -82,9 +84,9 @@ function Chat() {
 
     useEffect( () => {
         const q = query(
-        collection( db, "messages" ),  // these messages are on cloud firestore
-        orderBy( "createdAt" ),
-        limit( 100 )
+            collection( db, "messages" ),  // these messages are on cloud firestore
+            orderBy( "createdAt" ),
+            limit( 20 )
         );
     
         const unsubscribe = onSnapshot( q, ( QuerySnapshot ) => {
@@ -126,9 +128,9 @@ function Chat() {
 
 
 
-            console.log( "THIS IS THE DOC DATA" );
+            // console.log( "THIS IS THE DOC DATA" );
 
-            console.log( doc.data().text );
+            // console.log( doc.data().text );
         } );
 
         SetMessage( messages );

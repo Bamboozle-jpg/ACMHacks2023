@@ -16,6 +16,7 @@ function NameSearch() {
     const [ hide, setHide ] = useState( true );
     const [ ratio, setRatio ] = useState( 0 );
     const [ bestDoc, setBest ] = useState("");
+    
     function showSidebar() {
         setHide(false)
     }
